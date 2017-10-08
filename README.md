@@ -1,26 +1,26 @@
 # Connect Four
 
-Play Connect Four against a computer! This game uses Ruby and is played in the console.
+Play Connect Four against a custom-built Computer AI! This game uses Ruby and is played in the console.
 
 ## Instructions
 
 1. Install ruby if you do not already have it.
-2. Download the [zip file](https://github.com/alikew24/TicTacToe/archive/master.zip)
-3. Unzip the zip file. In the terminal, navigate to the TicTacToe-master directory.
+2. Download the [zip file](https://github.com/alikew24/ConnectFour/archive/master.zip)
+3. Unzip the zip file. In the terminal, navigate to the ConnectFour-master directory.
 4. Type 'bundle install' in the console.
 5. Type 'ruby game.rb' to start the game!
 
 ## How To Play
 
-Learn more about the rules of Tic Tac Toe [here](https://en.wikipedia.org/wiki/Tic-tac-toe).
+Learn more about the rules of Connect Four [here](https://en.wikipedia.org/wiki/Connect_Four).
+The goal of the game is to place 4 of your chips in a row.
+The first person to get four-in-a-row wins!
 
-To play, you simply type in the row number, followed by a comma, and then the column number of the spot where you would like to move. Then, press enter.
-
-Example: 0,0
+To play, simply use the arrow keys to move to a different column. Press the enter key
+when you have selected the column that you want to place your chip.
+Your chips are red and the Computer's chips are blue.
 
 ## Future Directions
-
-I would like to add the option for two human players to play against each other.
-Also, I would like to have computers with different levels of difficulty. Right now,
-the computer is unbeatable. I would like to give the player the option to play against
-a less difficult computer.
+The Computer AI uses simple logic to determine whether one of the players
+is about to win. In the future, I would like to implement the minimax algorithm
+so that the Computer AI can make more better, more complex decisions.

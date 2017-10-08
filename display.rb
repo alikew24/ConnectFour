@@ -5,11 +5,13 @@ require 'byebug'
 
 class Display
   attr_reader :board, :cursor, :notifications
+  attr_accessor :current_column
 
   def initialize(board)
       @board = board
       @cursor= Cursor.new([0,0], board)
       @notifications = {}
+      @current_column = nil
   end
 
   # for notifcations
@@ -34,12 +36,17 @@ class Display
   end
 
   def build_square(pos, piece)
+    self.current_column = cursor.cursor_pos[1]
+    dark_background = false
     if pos == cursor.cursor_pos
-      background = :light_black
-    elsif (pos[0] + pos[1]).odd?
-      background = :light_yellow
+      dark_background = true
+    elsif pos[1] == self.current_column
+      dark_background = true
+    end
+    if (pos[0] + pos[1]).odd?
+      background = dark_background ? :yellow : :light_yellow
     else
-      background = :light_cyan
+      background = dark_background ? :cyan : :light_cyan
     end
     stringified_piece = piece ? "  #{piece}  " : "     "
     square = stringified_piece.colorize(background: background)
@@ -55,7 +62,3 @@ class Display
     puts build_grid
   end
 end
-
-board = Board.new
-display = Display.new(board)
-display.render

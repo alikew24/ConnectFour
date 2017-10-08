@@ -12,23 +12,33 @@ class Board
   end
 
   def [](pos)
-    raise 'Invalid Position' unless valid_pos?(pos)
     row, col = pos
     @grid[row][col]
   end
 
   def []=(pos, piece)
-    raise 'Invalid Position' unless valid_pos?(pos)
     row, col = pos
     @grid[row][col] = piece
   end
 
-  def place_chip(pos, chip)
-    raise 'There is already a chip in that spot' unless empty?(pos)
-    row, col = pos
-    pos2 = [row + 1, col]
-    raise 'Invalid Move' if valid_pos?(pos2) && empty?(pos2)
+  def get_first_empty_pos_in_column(column)
+    row = self.grid.length - 1
+    pos = [row, column]
+    until empty?(pos) || pos[0] == 0
+      row -= 1
+      pos = [row, column]
+    end
+    return pos
+  end
+
+  def place_chip(column, chip)
+    raise 'That column is full' unless empty?([0, column])
+    pos = self.get_first_empty_pos_in_column(column)
     self[pos] = chip
+  end
+
+  def column_full?(column)
+    empty?([0, column]) ? false : true
   end
 
   def check_spots(pos, increment, num_of_spots_to_check)
@@ -72,8 +82,15 @@ class Board
     return winner
   end
 
+  def full?
+    (0...self.grid.length).each do |col|
+      return false unless self.column_full?(col)
+    end
+    return true
+  end
+
   def over?
-    self.check_for_winner(4)
+    self.check_for_winner(4) or self.full?
   end
 
 

@@ -1,5 +1,5 @@
 class Player
-  attr_reader :chip, :display
+  attr_reader :chip, :display, :name
 
   def self.get_player_chip(color)
     if color == 'red'
@@ -9,7 +9,8 @@ class Player
     end
   end
 
-  def initialize(color, display)
+  def initialize(name, color, display)
+    @name = name
     @chip = Player.get_player_chip(color)
     @display = display
   end
