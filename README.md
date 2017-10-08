@@ -11,7 +11,7 @@ Play Connect Four against a custom-built Computer AI! This game uses Ruby and is
 5. Type 'ruby game.rb' to start the game!
 
 
-![ConnectFourDemo](connect-four-demo.gif)
+![ConnectFourDemo](connect-four-shorter-demo.gif)
 
 ## How To Play
 
