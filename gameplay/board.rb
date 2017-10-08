@@ -1,5 +1,4 @@
 require 'colorize'
-require 'byebug'
 
 class Board
   attr_accessor :grid

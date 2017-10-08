@@ -1,6 +1,6 @@
 require_relative 'player'
-require_relative 'board'
-require_relative 'display'
+require './gameplay/board'
+require './gameplay/display'
 
 class HumanPlayer < Player
   def get_move(board)

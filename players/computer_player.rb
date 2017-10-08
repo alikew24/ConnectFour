@@ -1,7 +1,7 @@
 require "deep_clone"
 require_relative 'player'
-require_relative 'board'
-require_relative 'display'
+require './gameplay/board'
+require'./gameplay/display'
 
 class ComputerPlayer < Player
 
