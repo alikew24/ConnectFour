@@ -10,6 +10,9 @@ Play Connect Four against a custom-built Computer AI! This game uses Ruby and is
 4. Type 'bundle install' in the console.
 5. Type 'ruby game.rb' to start the game!
 
+
+![ConnectFourDemo](connect-four-demo.gif)
+
 ## How To Play
 
 Learn more about the rules of Connect Four [here](https://en.wikipedia.org/wiki/Connect_Four).
