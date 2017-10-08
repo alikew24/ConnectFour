@@ -2,7 +2,6 @@ require "deep_clone"
 require_relative 'player'
 require_relative 'board'
 require_relative 'display'
-require 'byebug'
 
 class ComputerPlayer < Player
 

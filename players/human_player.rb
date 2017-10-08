@@ -1,7 +1,7 @@
 require_relative 'player'
 require_relative 'board'
 require_relative 'display'
-require 'byebug'
+
 class HumanPlayer < Player
   def get_move(board)
     chosen_pos = nil
